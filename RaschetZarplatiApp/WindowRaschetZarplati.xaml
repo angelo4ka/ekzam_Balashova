@@ -1,0 +1,40 @@
+﻿<Window x:Class="RaschetZarplatiApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RaschetZarplatiApp"
+        mc:Ignorable="d"
+        Title="Elements. Расчёт заработной платы"
+        Height="700" Width="1150" MinWidth="1150" MinHeight="700">
+
+    <Grid Background="{StaticResource Fon}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="200*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0"
+              Background="{StaticResource FonOsnovnihElementov}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                <Image Source="/Resursi/logo-full.png"
+                       HorizontalAlignment="Left" Margin="14 5"/>
+                <TextBlock x:Name="TxtZagolovok" Text="Зарплата"
+                           Style="{StaticResource TxtBasoviy}"
+                           FontWeight="Bold"/>
+            </StackPanel>
+        </Grid>
+
+        <StackPanel Grid.Row="1" VerticalAlignment="Center">
+            <Image Source="/Resursi/logo-smoll.png" Opacity="0.1" Width="490"/>
+        </StackPanel>
+        <Frame x:Name="FrmNavig" Grid.Row="1" NavigationUIVisibility="Hidden">
+
+        </Frame>
+    </Grid>
+</Window>
