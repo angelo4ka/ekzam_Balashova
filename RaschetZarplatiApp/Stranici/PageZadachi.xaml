@@ -16,7 +16,6 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0"
@@ -50,22 +49,6 @@
                     Content="Добавить задачу"/>
             <Button x:Name="BtnRedactirovatZadachy"
                     Content="Редактировать задачу"/>
-        </StackPanel>
-
-        <StackPanel Grid.Row="3" Background="{StaticResource FonOsnovnihElementov}">
-            <StackPanel Orientation="Horizontal"
-                        HorizontalAlignment="Center">
-                <TextBlock Style="{StaticResource TxtBasoviy}">
-                    <Run Text="Время до блокировки:"/>
-                    <Run Foreground="{StaticResource AkcentVnimaniya}" Text="1 минута"/>
-                </TextBlock>
-            </StackPanel>
-        </StackPanel>
-        <StackPanel Grid.Row="3"
-                    HorizontalAlignment="Right">
-            <Button x:Name="BtnVihod"
-                    Content="Выход"
-                    Width="100"/>
         </StackPanel>
     </Grid>
 </Page>

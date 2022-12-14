@@ -29,6 +29,8 @@ namespace RaschetZarplatiApp
             PodclucheniyeOdb.podcluchObj = new ekzam_BalashovaEntities();
             ZagolovokObj.txtZag = TxtZagolovok;
             NavigaciyaObj.frmNavig = FrmNavig;
+            BlokirovkaObj.stplBlok = StplOpoveshenieBlokirovki;
+            BlokirovkaObj.stplVihod = StplVihodIzSistemi;
 
             FrmNavig.Navigate(new PageAvtorizaciya());
         }

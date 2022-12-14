@@ -53,7 +53,10 @@ namespace RaschetZarplatiApp.Stranici
                     MessageBox.Show("Выполнен вход под менеджером.", "Успешная авторизация", MessageBoxButton.OK, MessageBoxImage.Information);
                     PolzovatelObj.IsSyperPrava = true;
 
-                    NavigaciyaObj.frmNavig.Navigate(new PageZadachi());
+                    NavigaciyaObj.frmNavig.Navigate(new PageModuliSistemi());
+
+                    BlokirovkaObj.stplBlok.Visibility = Visibility.Visible;
+                    BlokirovkaObj.stplVihod.Visibility = Visibility.Visible;
                 }
                 else if (TbxLogin.Text == "0" && PswbxParol.Password == "0000")
                 {
@@ -61,6 +64,9 @@ namespace RaschetZarplatiApp.Stranici
                     PolzovatelObj.IsSyperPrava = false;
 
                     NavigaciyaObj.frmNavig.Navigate(new PageZadachi());
+
+                    BlokirovkaObj.stplBlok.Visibility = Visibility.Visible;
+                    BlokirovkaObj.stplVihod.Visibility = Visibility.Visible;
                 }
                 else
                 {
