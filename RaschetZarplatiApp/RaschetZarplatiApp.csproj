@@ -58,6 +58,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Stranici\PageAvtorizaciya.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WindowRaschetZarplati.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,7 +71,11 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="FailiDannih\NavigaciyaObj.cs" />
+    <Compile Include="FailiDannih\PolzovatelObj.cs" />
     <Compile Include="FailiDannih\ZagolovokObj.cs" />
+    <Compile Include="Stranici\PageAvtorizaciya.xaml.cs">
+      <DependentUpon>PageAvtorizaciya.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowRaschetZarplati.xaml.cs">
       <DependentUpon>WindowRaschetZarplati.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -104,8 +112,6 @@
     <Resource Include="Resursi\logo-smoll.ico" />
     <Resource Include="Resursi\logo-smoll.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Stranici\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

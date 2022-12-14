@@ -1,0 +1,88 @@
+﻿<Page x:Class="RaschetZarplatiApp.Stranici.PageAvtorizaciya"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RaschetZarplatiApp.Stranici"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Авторизация пользователя">
+    <Page.Resources>
+        <Style TargetType="TextBox" BasedOn="{StaticResource TbxBasoviy}"/>
+
+        <Style TargetType="TextBlock" BasedOn="{StaticResource TxtBasoviy}">
+            <Style.Setters>
+                <Setter Property="Background" Value="{StaticResource FonOsnovnihElementov}"/>
+            </Style.Setters>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Логин:" Width="70"
+                       Grid.Column="0" Grid.Row="0"
+                       HorizontalAlignment="Right"
+                       Style="{StaticResource TxtBasoviy}"/>
+            <TextBox x:Name="TbxLogin" Height="50"
+                     Grid.Column="1" Grid.Row="0"/>
+
+            <TextBlock Text="Пароль:" Width="70"
+                       HorizontalAlignment="Right"
+                       Grid.Column="0" Grid.Row="1"
+                       Style="{StaticResource TxtBasoviy}"/>
+            <PasswordBox x:Name="PswbxParol" Height="50"
+                         Style="{StaticResource PswbxBasoviy}"
+                         MaxLength="255" Grid.Column="1" Grid.Row="1"/>
+
+            <Button x:Name="BtnVhod" Height="40"
+                    Grid.Column="1" Grid.Row="2"
+                    Style="{StaticResource BtnBasoviy}"
+                    Content="Вход" Width="150" Click="BtnVhod_Click"/>
+        </Grid>
+
+        <Grid Grid.Row="1"
+              VerticalAlignment="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0">
+                <Run Text="Дата текущая:"/>
+                <Run x:Name="TxtData" Foreground="{StaticResource AkcentVnimaniya}"/>
+            </TextBlock>
+            <TextBlock Grid.Row="1">
+                <Run Text="Дата ближайшей ЗП:"/>
+                <Run x:Name="TxtDataSledZarplati"
+                     Text="5 января 2022"
+                     Foreground="{StaticResource AkcentVnimaniya}"/>
+            </TextBlock>
+            <TextBlock Grid.Row="2">
+                <Run Text="Задач выполняется:"/>
+                <Run x:Name="TxtColichVipolnayemZadach"
+                     Foreground="{StaticResource AkcentVnimaniya}"
+                     Text="16"/>
+            </TextBlock>
+        </Grid>
+    </Grid>
+</Page>

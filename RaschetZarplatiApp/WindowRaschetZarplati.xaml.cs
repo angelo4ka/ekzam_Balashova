@@ -1,4 +1,5 @@
 ﻿using RaschetZarplatiApp.FailiDannih;
+using RaschetZarplatiApp.Stranici;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,8 @@ namespace RaschetZarplatiApp
 
             ZagolovokObj.txtZag = TxtZagolovok;
             NavigaciyaObj.frmNavig = FrmNavig;
+
+            FrmNavig.Navigate(new PageAvtorizaciya());
         }
     }
 }
