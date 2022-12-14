@@ -26,6 +26,7 @@ namespace RaschetZarplatiApp
         {
             InitializeComponent();
 
+            PodclucheniyeOdb.podcluchObj = new ekzam_BalashovaEntities();
             ZagolovokObj.txtZag = TxtZagolovok;
             NavigaciyaObj.frmNavig = FrmNavig;
 
