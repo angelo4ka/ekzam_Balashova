@@ -1,0 +1,71 @@
+﻿<Page x:Class="RaschetZarplatiApp.Stranici.PageZadachi"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RaschetZarplatiApp.Stranici"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Список задач">
+    <Page.Resources>
+        <Style TargetType="Button" BasedOn="{StaticResource BtnBasoviy}"/>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+            <TextBlock Text="Задачи:"
+                       Style="{StaticResource TxtBasoviy}"/>
+            <RadioButton x:Name="RbtnZaplanirovana" Content="запланирована"/>
+            <RadioButton x:Name="RbtnIspolnyaetsa" Content="исполняется" IsChecked="True"/>
+            <RadioButton x:Name="RbtnVipolnena" Content="выполнена"/>
+            <RadioButton x:Name="RbtnOtmenena" Content="отменена"/>
+            <RadioButton x:Name="RbtnVse" Content="все"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" x:Name="DtgdZadachi">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Заголовок задачи" Width="123" Binding="{Binding Title}"/>
+                <DataGridTextColumn Header="Описание задачи" Width="123" Binding="{Binding Description}"/>
+                <DataGridTextColumn Header="Срок исполнения" Width="123" Binding="{Binding Deadline, StringFormat=d}"/>
+                <DataGridTextColumn Header="Дата выполнения" Width="123" Binding="{Binding CompletedDateTime, StringFormat=d}"/>
+                <DataGridTextColumn Header="Сложность задачи" Width="123" Binding="{Binding Difficulty}"/>
+                <DataGridTextColumn Header="Время на выполнение задачи (в мин.)" Width="123" Binding="{Binding Time}"/>
+                <DataGridTextColumn Header="Исполнитель задачи" Width="123" Binding="{Binding ExecutorTekst}"/>
+                <DataGridTextColumn Header="Статус задачи" Width="123" Binding="{Binding Status}"/>
+                <DataGridTextColumn Header="Характер задачи" Width="123" Binding="{Binding WorkType}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button x:Name="BtnDobavitZadachy"
+                    Content="Добавить задачу"/>
+            <Button x:Name="BtnRedactirovatZadachy"
+                    Content="Редактировать задачу"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Background="{StaticResource FonOsnovnihElementov}">
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                <TextBlock Style="{StaticResource TxtBasoviy}">
+                    <Run Text="Время до блокировки:"/>
+                    <Run Foreground="{StaticResource AkcentVnimaniya}" Text="1 минута"/>
+                </TextBlock>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="3"
+                    HorizontalAlignment="Right">
+            <Button x:Name="BtnVihod"
+                    Content="Выход"
+                    Width="100"/>
+        </StackPanel>
+    </Grid>
+</Page>

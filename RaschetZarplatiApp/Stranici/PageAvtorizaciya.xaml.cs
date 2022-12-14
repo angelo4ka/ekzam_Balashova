@@ -52,11 +52,15 @@ namespace RaschetZarplatiApp.Stranici
                 {
                     MessageBox.Show("Выполнен вход под менеджером.", "Успешная авторизация", MessageBoxButton.OK, MessageBoxImage.Information);
                     PolzovatelObj.IsSyperPrava = true;
+
+                    NavigaciyaObj.frmNavig.Navigate(new PageZadachi());
                 }
                 else if (TbxLogin.Text == "0" && PswbxParol.Password == "0000")
                 {
                     MessageBox.Show("Выполнен вход под исполнителем.", "Успешная авторизация", MessageBoxButton.OK, MessageBoxImage.Information);
                     PolzovatelObj.IsSyperPrava = false;
+
+                    NavigaciyaObj.frmNavig.Navigate(new PageZadachi());
                 }
                 else
                 {

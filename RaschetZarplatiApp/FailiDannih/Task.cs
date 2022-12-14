@@ -16,6 +16,7 @@ namespace RaschetZarplatiApp.FailiDannih
     {
         public int ID { get; set; }
         public int ExecutorID { get; set; }
+        public string ExecutorTekst { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public System.DateTime CreateDateTime { get; set; }

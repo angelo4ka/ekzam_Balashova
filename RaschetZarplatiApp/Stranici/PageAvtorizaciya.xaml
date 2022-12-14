@@ -49,7 +49,7 @@
                          Style="{StaticResource PswbxBasoviy}"
                          MaxLength="255" Grid.Column="1" Grid.Row="1"/>
 
-            <Button x:Name="BtnVhod" Height="40"
+            <Button x:Name="BtnVhod" Height="50"
                     Grid.Column="1" Grid.Row="2"
                     Style="{StaticResource BtnBasoviy}"
                     Content="Вход" Width="150" Click="BtnVhod_Click"/>

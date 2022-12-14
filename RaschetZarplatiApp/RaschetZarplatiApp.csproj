@@ -71,6 +71,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Stranici\PageZadachi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WindowRaschetZarplati.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -112,6 +116,9 @@
     <Compile Include="FailiDannih\ZagolovokObj.cs" />
     <Compile Include="Stranici\PageAvtorizaciya.xaml.cs">
       <DependentUpon>PageAvtorizaciya.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stranici\PageZadachi.xaml.cs">
+      <DependentUpon>PageZadachi.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowRaschetZarplati.xaml.cs">
       <DependentUpon>WindowRaschetZarplati.xaml</DependentUpon>

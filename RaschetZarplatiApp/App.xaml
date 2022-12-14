@@ -24,7 +24,7 @@
                 <Setter Property="Margin" Value="14"/>
                 <Setter Property="Padding" Value="10"/>
                 <Setter Property="FontSize" Value="16"/>
-                <Setter Property="Height" Value="30"/>
+                <Setter Property="Height" Value="40"/>
                 <Setter Property="Foreground" Value="White"/>
             </Style.Setters>
         </Style>
@@ -93,9 +93,22 @@
                 <Setter Property="FontFamily" Value="{StaticResource ShriftPrilojeniya}"/>
                 <Setter Property="Foreground" Value="{StaticResource OsnovnoiTekst}"/>
                 <Setter Property="FontSize" Value="16"/>
+                <Setter Property="Margin" Value="14"/>
             </Style.Setters>
         </Style>
         <Style TargetType="CheckBox">
+            <Style.Setters>
+                <Setter Property="Margin" Value="14"/>
+                <Setter Property="Padding" Value="10"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="Height" Value="40"/>
+                <Setter Property="FontFamily" Value="{StaticResource ShriftPrilojeniya}"/>
+                <Setter Property="Foreground" Value="{StaticResource OsnovnoiTekst}"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style.Setters>
+        </Style>
+        <Style TargetType="RadioButton">
             <Style.Setters>
                 <Setter Property="Margin" Value="14"/>
                 <Setter Property="Padding" Value="10"/>
