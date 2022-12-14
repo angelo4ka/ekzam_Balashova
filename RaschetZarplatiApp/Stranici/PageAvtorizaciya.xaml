@@ -80,8 +80,7 @@
             <TextBlock Grid.Row="2">
                 <Run Text="Задач выполняется:"/>
                 <Run x:Name="TxtColichVipolnayemZadach"
-                     Foreground="{StaticResource AkcentVnimaniya}"
-                     Text="16"/>
+                     Foreground="{StaticResource AkcentVnimaniya}"/>
             </TextBlock>
         </Grid>
     </Grid>

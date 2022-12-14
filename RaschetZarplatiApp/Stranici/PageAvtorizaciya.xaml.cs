@@ -26,6 +26,18 @@ namespace RaschetZarplatiApp.Stranici
             InitializeComponent();
 
             TxtData.Text = DateTime.Now.ToString("dd MMMM yyyy");
+            TxtColichVipolnayemZadach.Text = $"{PoluchColVipolnZadach()}";
+        }
+
+        /// <summary>
+        /// Получение количества выполняющихся задач
+        /// </summary>
+        /// <returns>Количество задач со статусом "исполняется"</returns>
+        private int PoluchColVipolnZadach()
+        {
+            List<FailiDannih.Task> Zadachi = PodclucheniyeOdb.podcluchObj.Task.ToList();
+
+            return Zadachi.Where(x => x.Status.Equals("исполняется")).ToList().Count;
         }
 
         private void BtnVhod_Click(object sender, RoutedEventArgs e)
