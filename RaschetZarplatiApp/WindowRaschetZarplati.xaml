@@ -29,6 +29,20 @@
                            Style="{StaticResource TxtBasoviy}"
                            FontWeight="Bold"/>
             </StackPanel>
+
+            <StackPanel Grid.Column="1" x:Name="StplSpisokIspolniteley"
+                        Orientation="Horizontal">
+                <TextBlock Text="Выбор исполнителя:"
+                           Style="{StaticResource TxtBasoviy}"/>
+                <ComboBox Style="{StaticResource CmbxBasoviy}"
+                          Width="300" x:Name="CmbxSpisokIspolniteley">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding FIO}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </StackPanel>
         </Grid>
 
         <StackPanel Grid.Row="1" VerticalAlignment="Center">

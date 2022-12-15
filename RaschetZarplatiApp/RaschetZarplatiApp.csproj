@@ -116,6 +116,7 @@
     <Compile Include="FailiDannih\NavigaciyaObj.cs" />
     <Compile Include="FailiDannih\PodclucheniyeOdb.cs" />
     <Compile Include="FailiDannih\PolzovatelObj.cs" />
+    <Compile Include="FailiDannih\SpisokIspolniteleyObj.cs" />
     <Compile Include="FailiDannih\SpravochnayaInformaciya.cs" />
     <Compile Include="FailiDannih\Task.cs">
       <DependentUpon>ModelBD.tt</DependentUpon>

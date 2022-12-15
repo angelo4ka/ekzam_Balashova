@@ -31,6 +31,13 @@ namespace RaschetZarplatiApp
             NavigaciyaObj.frmNavig = FrmNavig;
             BlokirovkaObj.stplBlok = StplOpoveshenieBlokirovki;
             BlokirovkaObj.stplVihod = StplVihodIzSistemi;
+            SpisokIspolniteleyObj.cmbxSpisIsp = CmbxSpisokIspolniteley;
+            SpisokIspolniteleyObj.stplSpisIsp = StplSpisokIspolniteley;
+
+            var Ispolniteli = new List<int>(PodclucheniyeOdb.podcluchObj.Executor.Select(x => x.ID).ToList());
+            CmbxSpisokIspolniteley.ItemsSource = (from i in PodclucheniyeOdb.podcluchObj.Executor
+                                                  join p in PodclucheniyeOdb.podcluchObj.User on i.ID equals p.ID
+                                                  select new { FIO = p.LastName + " " + p.FirstName + " " + p.MiddleName, i.ID }).ToList();
 
             FrmNavig.Navigate(new PageAvtorizaciya());
         }
