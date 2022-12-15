@@ -51,7 +51,7 @@
         <StackPanel Grid.Row="3" x:Name="StplVihodIzSistemi"
                     HorizontalAlignment="Right" Visibility="Collapsed">
             <Button x:Name="BtnVihod" Content="Выход" Width="100"
-                    Style="{StaticResource BtnBasoviy}"/>
+                    Style="{StaticResource BtnBasoviy}" Click="BtnVihod_Click"/>
         </StackPanel>
     </Grid>
 </Window>

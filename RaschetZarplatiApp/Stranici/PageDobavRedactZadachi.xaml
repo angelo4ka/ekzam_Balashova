@@ -1,0 +1,119 @@
+﻿<Page x:Class="RaschetZarplatiApp.Stranici.PageDobavRedactZadachi"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RaschetZarplatiApp.Stranici"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Добавление и редактирование информации о задачах">
+    <Page.Resources>
+        <Style TargetType="TextBlock"
+               BasedOn="{StaticResource TxtBasoviy}">
+            <Style.Setters>
+                <Setter Property="Width" Value="210"/>
+            </Style.Setters>
+        </Style>
+
+        <Style TargetType="TextBox" BasedOn="{StaticResource TbxBasoviy}">
+            <Style.Setters>
+                <Setter Property="Width" Value="350"/>
+            </Style.Setters>
+        </Style>
+
+        <Style TargetType="DatePicker" BasedOn="{StaticResource DtprBasoviy}">
+            <Style.Setters>
+                <Setter Property="Width" Value="350"/>
+            </Style.Setters>
+        </Style>
+
+        <Style TargetType="Button" BasedOn="{StaticResource BtnBasoviy}">
+            <Setter Property="Width" Value="150"/>
+        </Style>
+
+        <Style TargetType="ComboBox" BasedOn="{StaticResource CmbxBasoviy}">
+            <Style.Setters>
+                <Setter Property="Width" Value="350"/>
+                <Setter Property="SelectedIndex" Value="0"/>
+            </Style.Setters>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <ScrollViewer>
+            <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Исполнитель: "/>
+                    <ComboBox Name="CmbxExecutor">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Login}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Название: "/>
+                    <TextBox Name="TbxTitle"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Описание: "/>
+                    <TextBox Name="TbxDescription"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Сложность: "/>
+                    <TextBox Name="TbxDifficulty"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Дата создания: "/>
+                    <DatePicker Name="DtprCreateDateTime" SelectedDate=""/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Крайний срок выполнения: "/>
+                    <DatePicker Name="DtprDeadline" SelectedDate=""/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Время выполнения: "/>
+                    <TextBox Name="TbxTime"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Статус: "/>
+                    <ComboBox Name="CmbxStatus">
+                        <ComboBoxItem Content="запланирована"/>
+                        <ComboBoxItem Content="исполняется"/>
+                        <ComboBoxItem Content="выполнена"/>
+                        <ComboBoxItem Content="отменена"/>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Тип работы: "/>
+                    <ComboBox Name="CmbxWorkType">
+                        <ComboBoxItem Content="анализ и проектирование"/>
+                        <ComboBoxItem Content="установка оборудования"/>
+                        <ComboBoxItem Content="техническое обслуживание и сопровождение"/>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Дата выполнения: "/>
+                    <DatePicker Name="DtprCompletedDateTime" SelectedDate=""/>
+                </StackPanel>
+
+                <CheckBox x:Name="CkbxPriznakUdalennosti"
+                          Content="Удалена"/>
+
+                <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                    <Button x:Name="BtnSohranit"
+                            Content="Сохранить"
+                            Click="BtnSohranit_Click"/>
+                    <Button x:Name="BtnYdalut"
+                            Content="Удалить"
+                            Visibility="Collapsed"
+                            Click="BtnYdalut_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

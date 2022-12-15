@@ -34,5 +34,13 @@ namespace RaschetZarplatiApp
 
             FrmNavig.Navigate(new PageAvtorizaciya());
         }
+
+        private void BtnVihod_Click(object sender, RoutedEventArgs e)
+        {
+            StplOpoveshenieBlokirovki.Visibility = Visibility.Collapsed;
+            StplVihodIzSistemi.Visibility = Visibility.Collapsed;
+
+            FrmNavig.Navigate(new PageAvtorizaciya());
+        }
     }
 }

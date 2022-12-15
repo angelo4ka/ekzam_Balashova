@@ -67,7 +67,15 @@
                 <Setter Property="Margin" Value="14"/>
                 <Setter Property="FontSize" Value="16"/>
                 <Setter Property="Height" Value="40"/>
+                <Setter Property="Background" Value="{StaticResource FonOsnovnihElementov}"/>
                 <Setter Property="Foreground" Value="{StaticResource OsnovnoiTekst}"/>
+            </Style.Setters>
+        </Style>
+        <Style TargetType="DatePickerTextBox">
+            <Style.Setters>
+                <Setter Property="Background" Value="{StaticResource FonOsnovnihElementov}"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
             </Style.Setters>
         </Style>
         <Style x:Key="CmbxBasoviy" TargetType="ComboBox">

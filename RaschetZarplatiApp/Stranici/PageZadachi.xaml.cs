@@ -36,7 +36,7 @@ namespace RaschetZarplatiApp.Stranici
             }
 
             var Zadachi = FiltraciyaZadach(PodclucheniyeOdb.podcluchObj.Task.ToList());
-            DtgdZadachi.ItemsSource = Zadachi;
+            DtgdZadachi.ItemsSource = ZapolnitDanniyeIspolnitela(Zadachi);
 
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
@@ -50,7 +50,7 @@ namespace RaschetZarplatiApp.Stranici
             var Zadachi = PodclucheniyeOdb.podcluchObj.Task.ToList();
             Zadachi = FiltraciyaZadach(Zadachi);
 
-            DtgdZadachi.ItemsSource = Zadachi;
+            DtgdZadachi.ItemsSource = ZapolnitDanniyeIspolnitela(Zadachi);
         }
 
         /// <summary>
@@ -87,6 +87,45 @@ namespace RaschetZarplatiApp.Stranici
             }
 
             return FiltrovanniyeZadachi;
+        }
+
+        /// <summary>
+        /// Заполнение данных об исполнителе
+        /// </summary>
+        /// <param name="Zadachi">Список задач</param>
+        /// <returns>Исполнители с заполненной информацией</returns>
+        private List<FailiDannih.Task> ZapolnitDanniyeIspolnitela(List<FailiDannih.Task> Zadachi)
+        {
+            var Polzovateli = PodclucheniyeOdb.podcluchObj.User.ToList();
+            var Ispolniteli = PodclucheniyeOdb.podcluchObj.Executor.ToList();
+
+            foreach (var zadacha in Zadachi)
+            {
+                var polzovatel = Polzovateli.Where(x => x.ID.Equals(zadacha.ExecutorID)).ToList();
+                var isponitel = Ispolniteli.Where(x => x.ID.Equals(zadacha.ExecutorID)).ToList();
+                zadacha.ExecutorTekst = $"{polzovatel[0].LastName} {polzovatel[0].FirstName} {polzovatel[0].MiddleName} ({isponitel[0].Grade})";
+            }
+
+            return Zadachi;
+        }
+
+        private void BtnDobavitZadachy_Click(object sender, RoutedEventArgs e)
+        {
+            NavigaciyaObj.frmNavig.Navigate(new PageDobavRedactZadachi(null));
+        }
+
+        private void BtnRedactirovatZadachy_Click(object sender, RoutedEventArgs e)
+        {
+            FailiDannih.Task zadacha = (FailiDannih.Task)DtgdZadachi.SelectedItem;
+
+            if (zadacha != null)
+            {
+                NavigaciyaObj.frmNavig.Navigate(new PageDobavRedactZadachi(zadacha));
+            }
+            else
+            {
+                MessageBox.Show("Не выделена строка для редактирования.", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
     }
 }

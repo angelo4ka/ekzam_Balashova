@@ -71,6 +71,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Stranici\PageDobavRedactZadachi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Stranici\PageModuliSistemi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -112,6 +116,7 @@
     <Compile Include="FailiDannih\NavigaciyaObj.cs" />
     <Compile Include="FailiDannih\PodclucheniyeOdb.cs" />
     <Compile Include="FailiDannih\PolzovatelObj.cs" />
+    <Compile Include="FailiDannih\SpravochnayaInformaciya.cs" />
     <Compile Include="FailiDannih\Task.cs">
       <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
@@ -121,6 +126,9 @@
     <Compile Include="FailiDannih\ZagolovokObj.cs" />
     <Compile Include="Stranici\PageAvtorizaciya.xaml.cs">
       <DependentUpon>PageAvtorizaciya.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stranici\PageDobavRedactZadachi.xaml.cs">
+      <DependentUpon>PageDobavRedactZadachi.xaml</DependentUpon>
     </Compile>
     <Compile Include="Stranici\PageModuliSistemi.xaml.cs">
       <DependentUpon>PageModuliSistemi.xaml</DependentUpon>

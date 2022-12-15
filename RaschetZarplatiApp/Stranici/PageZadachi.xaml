@@ -34,8 +34,8 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Заголовок задачи" Width="123" Binding="{Binding Title}"/>
                 <DataGridTextColumn Header="Описание задачи" Width="123" Binding="{Binding Description}"/>
-                <DataGridTextColumn Header="Срок исполнения" Width="123" Binding="{Binding Deadline, StringFormat=d}"/>
-                <DataGridTextColumn Header="Дата выполнения" Width="123" Binding="{Binding CompletedDateTime, StringFormat=d}"/>
+                <DataGridTextColumn Header="Срок исполнения" Width="123" Binding="{Binding Deadline, StringFormat=dd.MM.yyyy}"/>
+                <DataGridTextColumn Header="Дата выполнения" Width="123" Binding="{Binding CompletedDateTime, StringFormat=dd.MM.yyyy}"/>
                 <DataGridTextColumn Header="Сложность задачи" Width="123" Binding="{Binding Difficulty}"/>
                 <DataGridTextColumn Header="Время на выполнение задачи (в мин.)" Width="123" Binding="{Binding Time}"/>
                 <DataGridTextColumn Header="Исполнитель задачи" Width="123" Binding="{Binding ExecutorTekst}"/>
@@ -46,9 +46,11 @@
 
         <StackPanel Grid.Row="2" Orientation="Horizontal">
             <Button x:Name="BtnDobavitZadachy"
-                    Content="Добавить задачу"/>
+                    Content="Добавить задачу"
+                    Click="BtnDobavitZadachy_Click"/>
             <Button x:Name="BtnRedactirovatZadachy"
-                    Content="Редактировать задачу"/>
+                    Content="Редактировать задачу"
+                    Click="BtnRedactirovatZadachy_Click"/>
         </StackPanel>
     </Grid>
 </Page>
