@@ -29,10 +29,14 @@ namespace RaschetZarplatiApp.Stranici
             if (PolzovatelObj.IsSyperPrava)
             {
                 ZagolovokObj.txtZag.Text = "Управление задачами";
+                BtnDobavitZadachy.Visibility = Visibility.Visible;
+                BtnRedactirovatZadachy.Visibility = Visibility.Visible;
             }
             else
             {
                 ZagolovokObj.txtZag.Text = "Мои задачи";
+                BtnDobavitZadachy.Visibility = Visibility.Collapsed;
+                BtnRedactirovatZadachy.Visibility = Visibility.Collapsed;
             }
 
             var Zadachi = FiltraciyaZadach(PodclucheniyeOdb.podcluchObj.Task.ToList());
@@ -146,6 +150,11 @@ namespace RaschetZarplatiApp.Stranici
             {
                 MessageBox.Show("Не выделена строка для редактирования.", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
+        }
+
+        private void BtnNazad_Click(object sender, RoutedEventArgs e)
+        {
+            NavigaciyaObj.frmNavig.Navigate(new PageModuliSistemi());
         }
     }
 }

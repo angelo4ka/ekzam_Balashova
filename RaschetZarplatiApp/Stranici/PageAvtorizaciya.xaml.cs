@@ -76,6 +76,8 @@ namespace RaschetZarplatiApp.Stranici
                         MessageBox.Show("Выполнен вход под менеджером.", "Успешная авторизация", MessageBoxButton.OK, MessageBoxImage.Information);
                         PolzovatelObj.IsSyperPrava = true;
 
+                        SpisokIspolniteleyObj.stplSpisIsp.Visibility = Visibility.Visible;
+
                         NavigaciyaObj.frmNavig.Navigate(new PageModuliSistemi());
                     }
                     else // Исполнитель
@@ -85,6 +87,11 @@ namespace RaschetZarplatiApp.Stranici
 
                         Executor ispolnitel = PodclucheniyeOdb.podcluchObj.Executor.Where(x => x.ID == PolzovatelObj.Polsovayel.ID).ToList()[0];
                         PolzovatelObj.Rang = ispolnitel.Grade;
+
+                        InfoPoleIspolnitelyaObj.tbxInfoIspoln.Text = $"{PolzovatelObj.Polsovayel.LastName} " +
+                            $"{PolzovatelObj.Polsovayel.FirstName} {PolzovatelObj.Polsovayel.MiddleName} " +
+                            $"({ispolnitel.Grade})";
+                        InfoPoleIspolnitelyaObj.stplInfoIspoln.Visibility = Visibility.Visible;
 
                         NavigaciyaObj.frmNavig.Navigate(new PageZadachi());
                     }

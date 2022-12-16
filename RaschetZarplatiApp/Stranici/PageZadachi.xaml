@@ -51,6 +51,8 @@
             <Button x:Name="BtnRedactirovatZadachy"
                     Content="Редактировать задачу"
                     Click="BtnRedactirovatZadachy_Click"/>
+            <Button x:Name="BtnNazad" Content="Назад"
+                    Click="BtnNazad_Click" Width="110"/>
         </StackPanel>
     </Grid>
 </Page>

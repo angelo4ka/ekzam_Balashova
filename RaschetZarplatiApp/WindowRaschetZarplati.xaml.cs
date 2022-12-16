@@ -33,6 +33,8 @@ namespace RaschetZarplatiApp
             BlokirovkaObj.stplVihod = StplVihodIzSistemi;
             SpisokIspolniteleyObj.cmbxSpisIsp = CmbxSpisokIspolniteley;
             SpisokIspolniteleyObj.stplSpisIsp = StplSpisokIspolniteley;
+            InfoPoleIspolnitelyaObj.stplInfoIspoln = StplPoleInformaciiIspolnitelya;
+            InfoPoleIspolnitelyaObj.tbxInfoIspoln = TbxInfoIspolnitelya;
 
             var Ispolniteli = new List<int>(PodclucheniyeOdb.podcluchObj.Executor.Select(x => x.ID).ToList());
             CmbxSpisokIspolniteley.ItemsSource = (from i in PodclucheniyeOdb.podcluchObj.Executor
@@ -47,6 +49,9 @@ namespace RaschetZarplatiApp
             StplOpoveshenieBlokirovki.Visibility = Visibility.Collapsed;
             StplVihodIzSistemi.Visibility = Visibility.Collapsed;
             SpisokIspolniteleyObj.cmbxSpisIsp.SelectedIndex = -1;
+            SpisokIspolniteleyObj.stplSpisIsp.Visibility = Visibility.Collapsed;
+            InfoPoleIspolnitelyaObj.stplInfoIspoln.Visibility = Visibility.Collapsed;
+            InfoPoleIspolnitelyaObj.tbxInfoIspoln.Text = "";
 
             FrmNavig.Navigate(new PageAvtorizaciya());
         }

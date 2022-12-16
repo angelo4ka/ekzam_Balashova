@@ -31,7 +31,7 @@
             </StackPanel>
 
             <StackPanel Grid.Column="1" x:Name="StplSpisokIspolniteley"
-                        Orientation="Horizontal">
+                        Orientation="Horizontal" Visibility="Collapsed">
                 <TextBlock Text="Выбор исполнителя:"
                            Style="{StaticResource TxtBasoviy}"/>
                 <ComboBox Style="{StaticResource CmbxBasoviy}"
@@ -42,6 +42,15 @@
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
+            </StackPanel>
+            <StackPanel Grid.Column="1" x:Name="StplPoleInformaciiIspolnitelya"
+                        Orientation="Horizontal" Visibility="Collapsed">
+                <TextBlock Text="Имя исполнителя:"
+                           Style="{StaticResource TxtBasoviy}"/>
+                <TextBox Style="{StaticResource TbxBasoviy}"
+                         Background="{StaticResource Fon}"
+                         Width="300" x:Name="TbxInfoIspolnitelya"
+                         IsReadOnly="True"/>
             </StackPanel>
         </Grid>
 

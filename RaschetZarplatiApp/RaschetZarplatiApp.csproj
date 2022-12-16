@@ -99,6 +99,7 @@
     <Compile Include="FailiDannih\Executor.cs">
       <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="FailiDannih\InfoPoleIspolnitelyaObj.cs" />
     <Compile Include="FailiDannih\Manager.cs">
       <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
