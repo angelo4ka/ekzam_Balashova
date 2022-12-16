@@ -36,8 +36,8 @@ namespace RaschetZarplatiApp.Stranici
             else
             {
                 ZagolovokObj.txtZag.Text = "Мои задачи";
-                BtnDobavitZadachy.Visibility = Visibility.Collapsed;
-                BtnRedactirovatZadachy.Visibility = Visibility.Collapsed;
+                BtnDobavitZadachy.Visibility = Visibility.Visible;
+                BtnRedactirovatZadachy.Visibility = Visibility.Visible;
                 BtnNazad.Visibility = Visibility.Collapsed;
             }
 
@@ -59,6 +59,8 @@ namespace RaschetZarplatiApp.Stranici
             {
                 Zadachi = VivestiZadachiIspolnitelya(Zadachi);
             }
+            // Упорядочевание списка задач по убыванию даты создания
+            Zadachi = Zadachi.OrderByDescending(x => x.CreateDateTime).ToList();
 
             DtgdZadachi.ItemsSource = ZapolnitDanniyeIspolnitela(Zadachi);
         }

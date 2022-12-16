@@ -44,7 +44,7 @@ namespace RaschetZarplatiApp.Stranici
 
         private void BtnRaschetZarplati_Click(object sender, RoutedEventArgs e)
         {
-            InfoNetModula();
+            NavigaciyaObj.frmNavig.Navigate(new PageRaschetZarplati());
         }
 
         private void InfoNetModula()
