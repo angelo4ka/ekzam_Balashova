@@ -38,7 +38,7 @@ namespace RaschetZarplatiApp.Stranici
 
         private void BtnYpravleniyeCoefficientami_Click(object sender, RoutedEventArgs e)
         {
-            InfoNetModula();
+            NavigaciyaObj.frmNavig.Navigate(new PageYpravleniyeKoefficientami());
         }
 
         private void BtnRaschetZarplati_Click(object sender, RoutedEventArgs e)

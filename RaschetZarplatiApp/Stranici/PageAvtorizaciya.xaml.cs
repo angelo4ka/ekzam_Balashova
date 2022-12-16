@@ -48,29 +48,49 @@ namespace RaschetZarplatiApp.Stranici
             }
             else
             {
-                if (TbxLogin.Text == "1" && PswbxParol.Password == "1111")
+                bool PodtvergzdeniyeVhoda = false;
+
+                List<User> polzovateli = PodclucheniyeOdb.podcluchObj.User.ToList();
+                foreach (User polzovatel in polzovateli)
                 {
-                    MessageBox.Show("Выполнен вход под менеджером.", "Успешная авторизация", MessageBoxButton.OK, MessageBoxImage.Information);
-                    PolzovatelObj.IsSyperPrava = true;
+                    if ((polzovatel.Login == TbxLogin.Text) && (PswbxParol.Password == polzovatel.Password))
+                    {
+                        PodtvergzdeniyeVhoda = true;
+                        PolzovatelObj.Polsovayel = polzovatel;
 
-                    NavigaciyaObj.frmNavig.Navigate(new PageModuliSistemi());
-
-                    BlokirovkaObj.stplBlok.Visibility = Visibility.Visible;
-                    BlokirovkaObj.stplVihod.Visibility = Visibility.Visible;
+                        break;
+                    }
                 }
-                else if (TbxLogin.Text == "0" && PswbxParol.Password == "0000")
+
+                if (!PodtvergzdeniyeVhoda)
                 {
-                    MessageBox.Show("Выполнен вход под исполнителем.", "Успешная авторизация", MessageBoxButton.OK, MessageBoxImage.Information);
-                    PolzovatelObj.IsSyperPrava = false;
-
-                    NavigaciyaObj.frmNavig.Navigate(new PageZadachi());
-
-                    BlokirovkaObj.stplBlok.Visibility = Visibility.Visible;
-                    BlokirovkaObj.stplVihod.Visibility = Visibility.Visible;
+                    MessageBox.Show("Введены неверный логин и/или пароль.\nПопробуйте ввести данные заново.", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
                 else
                 {
-                    MessageBox.Show("Введены неверный логин и/или пароль.\nПопробуйте ввести данные заново.", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Error);
+                    List<int> menedgeri = PodclucheniyeOdb.podcluchObj.Manager.Select(x => x.ID).ToList();
+
+                    // Проверка статуса вошедшего пользователя
+                    if (menedgeri.Contains(PolzovatelObj.Polsovayel.ID)) // Менеджер
+                    {
+                        MessageBox.Show("Выполнен вход под менеджером.", "Успешная авторизация", MessageBoxButton.OK, MessageBoxImage.Information);
+                        PolzovatelObj.IsSyperPrava = true;
+
+                        NavigaciyaObj.frmNavig.Navigate(new PageModuliSistemi());
+                    }
+                    else // Исполнитель
+                    {
+                        MessageBox.Show("Выполнен вход под исполнителем.", "Успешная авторизация", MessageBoxButton.OK, MessageBoxImage.Information);
+                        PolzovatelObj.IsSyperPrava = false;
+
+                        Executor ispolnitel = PodclucheniyeOdb.podcluchObj.Executor.Where(x => x.ID == PolzovatelObj.Polsovayel.ID).ToList()[0];
+                        PolzovatelObj.Rang = ispolnitel.Grade;
+
+                        NavigaciyaObj.frmNavig.Navigate(new PageZadachi());
+                    }
+
+                    BlokirovkaObj.stplBlok.Visibility = Visibility.Visible;
+                    BlokirovkaObj.stplVihod.Visibility = Visibility.Visible;
                 }
             }
         }
