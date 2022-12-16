@@ -31,12 +31,14 @@ namespace RaschetZarplatiApp.Stranici
                 ZagolovokObj.txtZag.Text = "Управление задачами";
                 BtnDobavitZadachy.Visibility = Visibility.Visible;
                 BtnRedactirovatZadachy.Visibility = Visibility.Visible;
+                BtnNazad.Visibility = Visibility.Visible;
             }
             else
             {
                 ZagolovokObj.txtZag.Text = "Мои задачи";
                 BtnDobavitZadachy.Visibility = Visibility.Collapsed;
                 BtnRedactirovatZadachy.Visibility = Visibility.Collapsed;
+                BtnNazad.Visibility = Visibility.Collapsed;
             }
 
             var Zadachi = FiltraciyaZadach(PodclucheniyeOdb.podcluchObj.Task.ToList());

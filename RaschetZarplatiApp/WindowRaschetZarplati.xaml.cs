@@ -52,6 +52,7 @@ namespace RaschetZarplatiApp
             SpisokIspolniteleyObj.stplSpisIsp.Visibility = Visibility.Collapsed;
             InfoPoleIspolnitelyaObj.stplInfoIspoln.Visibility = Visibility.Collapsed;
             InfoPoleIspolnitelyaObj.tbxInfoIspoln.Text = "";
+            TxtZagolovok.Text = "Зарплата";
 
             FrmNavig.Navigate(new PageAvtorizaciya());
         }

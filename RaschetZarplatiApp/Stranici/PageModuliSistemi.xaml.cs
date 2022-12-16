@@ -24,6 +24,7 @@ namespace RaschetZarplatiApp.Stranici
         public PageModuliSistemi()
         {
             InitializeComponent();
+            ZagolovokObj.txtZag.Text = "Зарплата";
         }
 
         private void BtnIspoliteli_Click(object sender, RoutedEventArgs e)

@@ -184,10 +184,7 @@ namespace RaschetZarplatiApp.Stranici
 
         private void BtnNazad_Click(object sender, RoutedEventArgs e)
         {
-            if (NavigaciyaObj.frmNavig.CanGoBack)
-            {
-                NavigaciyaObj.frmNavig.GoBack();
-            }
+            NavigaciyaObj.frmNavig.Navigate(new PageZadachi());
         }
     }
 }
