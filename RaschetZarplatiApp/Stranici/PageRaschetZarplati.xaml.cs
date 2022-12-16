@@ -27,5 +27,20 @@ namespace RaschetZarplatiApp.Stranici
 
             ZagolovokObj.txtZag.Text = "Расчёт зарплаты";
         }
+
+        private void BtnNazad_Click(object sender, RoutedEventArgs e)
+        {
+            NavigaciyaObj.frmNavig.Navigate(new PageModuliSistemi());
+        }
+
+        private void BtnRaschitatiZarplaty_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CmbxIspolnitel_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            TbxZarplata.Text = "";
+        }
     }
 }

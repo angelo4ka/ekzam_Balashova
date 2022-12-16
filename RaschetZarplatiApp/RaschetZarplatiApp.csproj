@@ -211,5 +211,11 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LibraryRaschetZarplati\LibraryRaschetZarplati.csproj">
+      <Project>{eb015455-788b-4c94-aee4-515ba2fa42fb}</Project>
+      <Name>LibraryRaschetZarplati</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

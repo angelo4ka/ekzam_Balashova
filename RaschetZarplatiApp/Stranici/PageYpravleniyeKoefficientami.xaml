@@ -7,8 +7,88 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Управление коэффициентами">
+    <Page.Resources>
+        <Style TargetType="TextBlock"
+               BasedOn="{StaticResource TxtBasoviy}">
+            <Style.Setters>
+                <Setter Property="Width" Value="470"/>
+            </Style.Setters>
+        </Style>
+
+        <Style TargetType="TextBox" BasedOn="{StaticResource TbxBasoviy}">
+            <Style.Setters>
+                <Setter Property="Width" Value="250"/>
+            </Style.Setters>
+        </Style>
+
+        <Style TargetType="Button" BasedOn="{StaticResource BtnBasoviy}">
+            <Setter Property="Width" Value="150"/>
+        </Style>
+    </Page.Resources>
 
     <Grid>
-        
+        <ScrollViewer>
+            <StackPanel HorizontalAlignment="Center"
+                        Margin="25">
+                <Expander Header="Коэффициенты гарантированного минимума зарплаты за месяц для junior, middle и senior (руб.)">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Минимум ЗП для junior:"/>
+                            <TextBox x:Name="TbxGarantMinZpJun"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Минимум ЗП для middle:"/>
+                            <TextBox x:Name="TbxGarantMinZpMiddle"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Минимум ЗП для senior:"/>
+                            <TextBox x:Name="TbxGarantMinZpSenior"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Expander>
+                <Expander Header="Коэффициенты характера выполненных работ">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Анализ и проектирование:"/>
+                            <TextBox x:Name="TbxAnalizProectir"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Установка оборудования:"/>
+                            <TextBox x:Name="TbxYstanovkaOboryd"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Техническое обслуживание и сопровождение:"/>
+                            <TextBox x:Name="TbxTehobslyjgSoprovojgd"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Expander>
+                <Expander Header="Прочие коэффициенты">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Сложность исполнения задач:"/>
+                            <TextBox x:Name="TbxSlojgnosti"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Время исполнения задач:"/>
+                            <TextBox x:Name="TbxVremya"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Перевод абстрактного веса задачи в денежный эквивалент:"
+                                       ToolTip="Дополнительный коэффициент для перевода абстрактного веса задачи в денежный эквивалент"/>
+                            <TextBox x:Name="TbxAbstractVesVDengi"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Expander>
+                <StackPanel HorizontalAlignment="Center"
+                            Orientation="Horizontal">
+                    <Button x:Name="BtnSohranit"
+                            Content="Сохранить"
+                            Click="BtnSohranit_Click"/>
+                    <Button x:Name="BtnNazad"
+                            Content="Назад"
+                            Click="BtnNazad_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>

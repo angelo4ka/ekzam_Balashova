@@ -7,8 +7,38 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Расчёт зарплаты">
+    <Page.Resources>
+        <Style TargetType="TextBlock" BasedOn="{StaticResource TxtBasoviy}">
+            <Setter Property="Width" Value="190"/>
+        </Style>
 
+        <Style TargetType="Button" BasedOn="{StaticResource BtnBasoviy}">
+            <Setter Property="Width" Value="150"/>
+        </Style>
+    </Page.Resources>
     <Grid>
-        
+        <StackPanel VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Исполнитель: "/>
+                <ComboBox Style="{StaticResource CmbxBasoviy}"
+                          Width="300" x:Name="CmbxIspolnitel"
+                          SelectionChanged="CmbxIspolnitel_SelectionChanged"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Зарплата исполнителя:"/>
+                <TextBox x:Name="TbxZarplata"
+                         Style="{StaticResource TbxBasoviy}"
+                         Width="300" IsReadOnly="True"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center"
+                        Orientation="Horizontal">
+                <Button Content="Рассчитать ЗП"
+                        Name="BtnRaschitatiZarplaty"
+                        Click="BtnRaschitatiZarplaty_Click"/>
+                <Button x:Name="BtnNazad" Content="Назад"
+                        Click="BtnNazad_Click"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>
