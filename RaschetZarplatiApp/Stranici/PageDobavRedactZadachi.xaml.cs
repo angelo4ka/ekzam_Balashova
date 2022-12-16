@@ -31,7 +31,7 @@ namespace RaschetZarplatiApp.Stranici
             var Ispolniteli = new List<int>(PodclucheniyeOdb.podcluchObj.Executor.Select(x => x.ID).ToList());
             CmbxExecutor.ItemsSource = (from i in PodclucheniyeOdb.podcluchObj.Executor
                                         join p in PodclucheniyeOdb.podcluchObj.User on i.ID equals p.ID
-                                        select new { p.Login, i.ID }).ToList();
+                                        select new { FIO = p.LastName + " " + p.FirstName + " " + p.MiddleName, i.ID }).ToList();
             DtprCreateDateTime.SelectedDate = DateTime.Today;
             DtprDeadline.SelectedDate = DateTime.Today;
             if (zadacha != null)
@@ -173,6 +173,14 @@ namespace RaschetZarplatiApp.Stranici
             catch (Exception er)
             {
                 MessageBox.Show(er.Message.ToString());
+            }
+        }
+
+        private void BtnNazad_Click(object sender, RoutedEventArgs e)
+        {
+            if (NavigaciyaObj.frmNavig.CanGoBack)
+            {
+                NavigaciyaObj.frmNavig.GoBack();
             }
         }
     }

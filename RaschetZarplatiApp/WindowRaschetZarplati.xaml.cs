@@ -46,6 +46,7 @@ namespace RaschetZarplatiApp
         {
             StplOpoveshenieBlokirovki.Visibility = Visibility.Collapsed;
             StplVihodIzSistemi.Visibility = Visibility.Collapsed;
+            SpisokIspolniteleyObj.cmbxSpisIsp.SelectedIndex = -1;
 
             FrmNavig.Navigate(new PageAvtorizaciya());
         }

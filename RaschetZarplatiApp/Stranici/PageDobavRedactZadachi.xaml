@@ -112,6 +112,9 @@
                             Content="Удалить"
                             Visibility="Collapsed"
                             Click="BtnYdalut_Click"/>
+                    <Button x:Name="BtnNazad"
+                            Content="Назад"
+                            Click="BtnNazad_Click"/>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>

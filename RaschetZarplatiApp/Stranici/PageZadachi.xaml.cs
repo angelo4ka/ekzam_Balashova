@@ -49,6 +49,10 @@ namespace RaschetZarplatiApp.Stranici
             // Получаем все записи из БД
             var Zadachi = PodclucheniyeOdb.podcluchObj.Task.ToList();
             Zadachi = FiltraciyaZadach(Zadachi);
+            if (SpisokIspolniteleyObj.cmbxSpisIsp.SelectedIndex > -1)
+            {
+                Zadachi = VivestiZadachiIspolnitelya(Zadachi);
+            }
 
             DtgdZadachi.ItemsSource = ZapolnitDanniyeIspolnitela(Zadachi);
         }
@@ -87,6 +91,22 @@ namespace RaschetZarplatiApp.Stranici
             }
 
             return FiltrovanniyeZadachi;
+        }
+
+        /// <summary>
+        /// Фильтрация задач по выбранному исполнителю
+        /// </summary>
+        /// <param name="Zadachi">Список задач</param>
+        /// <returns>Список отфильтрованных задач по исполнителю</returns>
+        private List<FailiDannih.Task> VivestiZadachiIspolnitelya(List<FailiDannih.Task> Zadachi)
+        {
+            string tekstDannihIspolnitelya = $"{SpisokIspolniteleyObj.cmbxSpisIsp.SelectedItem}";
+            string[] dannieIspolnitelya = tekstDannihIspolnitelya.Split(new string[] { "ID = " }, StringSplitOptions.RemoveEmptyEntries);
+            int idIspolnitelya = Convert.ToInt32(dannieIspolnitelya[dannieIspolnitelya.Length - 1].Replace(" }", ""));
+
+            Zadachi = Zadachi.Where(x => x.ExecutorID.Equals(idIspolnitelya)).ToList();
+
+            return Zadachi;
         }
 
         /// <summary>
