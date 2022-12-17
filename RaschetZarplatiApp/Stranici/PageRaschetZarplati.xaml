@@ -22,8 +22,14 @@
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Исполнитель: "/>
                 <ComboBox Style="{StaticResource CmbxBasoviy}"
-                          Width="300" x:Name="CmbxIspolnitel"
-                          SelectionChanged="CmbxIspolnitel_SelectionChanged"/>
+                          Width="300" x:Name="CmbxIspolniteli"
+                          SelectionChanged="CmbxIspolniteli_SelectionChanged">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding FIO}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Зарплата исполнителя:"/>
